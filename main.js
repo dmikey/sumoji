@@ -1,3 +1,3 @@
-define(['./src/sumoji', function(sumoji){
+define(['./src/sumoji'], function(sumoji){
 	return sumoji;
-}]);
+});
