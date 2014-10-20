@@ -35,7 +35,7 @@ define(['yobidashi/main', 'haridashi/main'], function(messages, utility) {
             }
         },
         generateHTML: function(){
-            var _tag = this.tag ? document.createElement(this.tag) : 'div';
+            var _tag = document.createElement(this.tag ? this.tag : 'div');
             _tag.innerHTML = this.generateInnerHTML();
             return _tag.outerHTML;
         },
