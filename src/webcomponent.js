@@ -6,6 +6,11 @@ define(['./component', 'ichimon/main', 'yobidashi/main'], function (component, m
 
 	//define a web component, it will mixin from component
 	var extend = {
+		//generate the innerHTML for this component, and then append it to the root of this
+		//rendered HTML node
+		render: function() {
+			this.innerHTML = this.generateInnerHTML();
+		},
 		//we'll be extended component.create
 		//the inherited function is passed in as the first param
 		create: function (sup) {
@@ -24,7 +29,9 @@ define(['./component', 'ichimon/main', 'yobidashi/main'], function (component, m
 									//run inherited create
 									sup.apply(this, arguments);
 									//fill the node with it's template
-									this.innerHTML += _this.generateInnerHTML();
+									if(!_this.defer) {
+										this.innerHTML += _this.generateInnerHTML();
+									}
 
 									if (this.created && typeof this.created == 'function') {
 										this.created();
