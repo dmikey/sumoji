@@ -3,7 +3,6 @@ define(['yobidashi/main', 'haridashi/main'], function(messages, utility) {
     var buildHTML = function(component) {
 
         if(component.template){
-			console.log(component);
             return utility.template(component.template, component);
         } else {
             return component.content || '';
