@@ -54,22 +54,23 @@ define(['./component', 'ichimon/main', 'yobidashi/main'], function (component, m
 								value: function (
 									name, previousValue, value
 								) {
+									//todo finish implimentation of attributes changed
 									if (previousValue == null) {
-										console.log(
-											'got a new attribute ', name,
-											' with value ', value
-										);
+//										console.log(
+//											'got a new attribute ', name,
+//											' with value ', value
+//										);
 									} else if (value == null) {
-										console.log(
-											'somebody removed ', name,
-											' its value was ', previousValue
-										);
+//										console.log(
+//											'somebody removed ', name,
+//											' its value was ', previousValue
+//										);
 									} else {
-										console.log(
-											name,
-											' changed from ', previousValue,
-											' to ', value
-										);
+//										console.log(
+//											name,
+//											' changed from ', previousValue,
+//											' to ', value
+//										);
 									}
 								}
 							}
